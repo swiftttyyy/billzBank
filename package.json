@@ -1,11 +1,30 @@
 {
-  "name": "newbank",
+  "name": "y",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"# bank\"  git init git add README.md git commit -m \"first commit\" git branch -M main git remote add origin https://github.com/swiftttyyy/bank.git git push -u origin main\r \"# bank\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swiftttyyy/bank.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swiftttyyy/bank/issues"
+  },
+  "homepage": "https://github.com/swiftttyyy/bank#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^5.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^8.1.1",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.0.3"
+  }
 }
