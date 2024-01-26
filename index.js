@@ -1,6 +1,5 @@
 const express = require("express")
 const app = express()
-const mysql = require("mysql2")
 const mongoose = require('mongoose');
 const MongoDBStore = require("connect-mongo")
 const User = require("./models/user")
@@ -233,7 +232,7 @@ app.post("/logout", (req,res)=>{
     req.session.user_id = null
     res.redirect("/login")
   })
-  
+
 
 app.listen(4000, ()=>{
     console.log("Listening")
