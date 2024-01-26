@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Liberty Pride Finance </title>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon-32x32.png" rel="icon">
+    <link href="assets/img/apple-icon-180x180.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/animations.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/transformations.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <link rel="stylesheet" href="assets/css/UserDash.css">
+    <style>
+        @media only screen and (min-width:992px) {
+            #credit {
+                display: block;
+                box-sizing: border-box;
+                height: 181px;
+                width: 363px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+    <div class="overlay"></div>
+
+    <!-- Sidebar -->
+    <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
+        <div class="simplebar-content" style="padding: 0px;">
+            <a class="sidebar-brand" href="index">
+                <span class="align-middle"> Liberty Pride Finance </span>
+            </a>
+
+            <ul class="navbar-nav align-self-stretch">
+
+                <!-- <li class="sidebar-header">
+                        Pages
+                    </li> -->
+                <li class="menuHover">
+
+                    <a href="account" id="Dashboard" class="nav-link text-left " role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="flaticon-bar-chart-1"></i><i class="bx bxs-dashboard ico"></i> Dashboard
+                    </a>
+                </li>
+
+                <li class="menuHover">
+                    <a href="account/Transfer" id="Transfer" class="nav-link text-left" role="button">
+                        <i class="flaticon-bar-chart-1"></i><i class="bx bx-transfer ico"></i> Transfer
+                    </a>
+                </li>
+
+                <li class="menuHover box-icon">
+                    <a href="account/saving" id="Saving" class="nav-link text-left" role="button">
+                        <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-coin-stack ico"></i> Saving
+                    </a>
+                </li>
+
+                <li class="menuHover">
+                    <a href="account/T_history" id="TransactionHistory" class="nav-link text-left" role="button">
+                        <i class="flaticon-bar-chart-1"></i> <i class="bx bx-history ico"></i> Transaction History
+                    </a>
+                </li>
+
+                <li class="has-sub menuHover">
+                    <a class="nav-link collapsed text-left" href="#collapseExample2" role="button" data-toggle="collapse">
+                        <i class="flaticon-user"></i> <i class="bx bx-user-circle Profile ico"></i> Profile
+                    </a>
+                    <div class="collapse menu mega-dropdown" id="collapseExample2">
+                        <div class="dropmenu" aria-labelledby="navbarDropdown">
+                            <div class="container-fluid ">
+                                <div class="row">
+                                    <div class="col-lg-12 px-2">
+                                        <div class="submenu-box">
+                                            <ul class="list-unstyled m-0">
+                                                <li><a id="Profile" class="" href="account/profile">Profile</a></li>
+                                                <li><a id="SecureAccount" href="account/secureAccount">Secure Account</a></li>
+                                                <!-- <li><a href="">Contact Us</a></li> -->
+                                                <!-- <li><a href="">Feedback</a></li> -->
+                                                <!-- <li><a href="">Help</a></li> -->
+                                                <!-- <li><a href="">ReactJS</a></li> -->
+                                                <!-- <li><a href="">Asp.net</a></li> -->
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+
+                <li class="menuHover">
+                    <a href="account/cards" id="Cards" class="nav-link text-left" role="button">
+                        <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-credit-card ico"></i>Cards
+                    </a>
+                </li>
+
+                <!-- <li class="sidebar-header">
+                        tools and component
+                    </li> -->
+
+
+                <!-- <li class="sidebar-header">
+                        tools and component
+                    </li> -->
+                <!-- <li id="Setting" class="menuHover">
+                    <a class="nav-link text-left" role="button">
+                        <i class="flaticon-bar-chart-1"></i> <i class="bx bxs-cog ico"></i> Setting
+                    </a>
+                </li> -->
+                <li class="menuHover">
+                    <form action="/logout" method="post">
+                    <button class="nav-link text-left" role="button">
+                        <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
+                    </button>
+                </form>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+    </nav>
+    <!-- /#sidebar-wrapper -->
+
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+
+        <div id="content">
+
+            <div class="container-fluid p-0 px-lg-0 px-md-0">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light my-navbar">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline navbar-search">
+                        <div class="input-group">
+                            <h1 id="bankBrand" style="font-size: 24px; color:blue" class="mt-2"> Liberty Pride Finance </h1>
+                            <!-- <input type="text" class="form-control bg-light " placeholder="Search for..." aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div> -->
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown  d-sm-none">
+
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-icon dropdown" href="#" id="alertsDropdown" data-toggle="dropdown" aria-expanded="false">
+                                <div class="position-relative">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle" style="color: gray;">
+                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                    </svg>
+                                    <span class="indicator">4</span>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right py-0" aria-labelledby="alertsDropdown">
+                                <div class="dropdown-menu-header">
+                                    4 New Notifications
+                                </div>
+                                <div class="list-group">
+                                    <a href="#" class="list-group-item">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle text-danger">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                                </svg>
+                                            </div>
+                                            <div class="col-10">
+                                                <div class="text-dark">Update completed</div>
+                                                <div class="text-muted small mt-1">Restart server 12 to complete the
+                                                    update.</div>
+                                                <div class="text-muted small mt-1">30m ago</div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="dropdown-menu-footer">
+                                    <a href="#" class="text-muted">Show all notifications</a>
+                                </div>
+                            </div>
+                        </li> -->
+                        <!-- Nav Item - Messages -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link " href="#" role="button">
+                                <i class="fas fa-envelope"></i>
+                                
+                                <span class="badge badge-danger badge-counter">7</span>
+                            </a>
+                        </li> -->
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= useraccount.firstname  %></span>
+                                <img id="HeaderProfile" hidden class="img-profile rounded-circle">
+                                <span id="HeaderProfileTag" class="btn btn-circle text-white" style="font-size: 13px; background-color: #29391b;">C</span>
+                            </a>
+
+
+                        </li>
+
+                    </ul>
+
+                </nav>
+                
+                  <!DOCTYPE html>
+<html>
+
+   <head>
+      <title></title>
+   </head>
+	
+   <body>
+      <marquee>
+          
+          
+          
+       <font color="darkblue"  >
+           <b>
+          NOTICE : We are committed to providing a secured and convenient banking experience to all our customers through  excellent services powered by state of art technologies , however if you notice anything SUSPICIOUS with your online banking portal, kindly contact your account manager for immediate action. Thank you for banking with us!</b></font> 
+          
+      </marquee>
+   </body>
+	
+</html>    <!-- End of Topbar -->
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid px-lg-4">
+        <div class="row">
+            <div class="col-md-12 mt-lg-4 mt-4">
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800"><font color="darkorange">Dashboard</font></h1>
+                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>
+                        Generate Report</a> -->
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4">Balance $</h5>
+                                <h1 id="BalanceDisplay" class="display-5 mt-1 mb-3"></h1>
+                                <div class="mb-1">
+                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i></span>
+                                    <span class="text-muted">Your Total Balance</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4">Saving $</h5>
+                                <h1 id="SavingDisplay" class="display-5 mt-1 mb-3"></h1>
+                                <div class="mb-1">
+                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i></span>
+                                    <span class="text-muted">Save Money Monthly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4 ">Credited this Month $</h5>
+                                <h1 id="CreditDisplay" class="display-5 mt-1 mb-3 text-success"></h1>
+                                <div class="mb-1">
+                                    <span id="CreditLastM" class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i></span>
+                                    <span class="text-muted">Since last Month $</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4">Debited this Month $</h5>
+                                <h1 id="DebitDisplay" class="display-5 mt-1 mb-3 text-danger"></h1>
+                                <div class="mb-1">
+                                    <span id="DebitLastM" class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> </span>
+                                    <span class="text-muted">Since last Month</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Transaction Graph</h4>
+                            <h5 class="card-subtitle">Overview of Daily transaction</h5>
+                        </div>
+                        <div class="d-md-flex align-items-center">
+
+                            <canvas id="Credit" width="300" height="100"></canvas>
+                            <div class="ml-auto">
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Cash Flow Graph</h4>
+                            <h5 class="card-subtitle">Overview of Total Cash flow</h5>
+                        </div>
+                        <div class="d-md-flex align-items-center">
+
+                            <canvas id="Balance" width="300" height="100"></canvas>
+                            <div class="ml-auto">
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- column -->
+            <div class="col-md-12 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- title -->
+                        <div class="d-md-flex align-items-center">
+                            <div>
+                                <h4 class="card-title">Transaction History</h4>
+                                <h5 class="card-subtitle">Overview of recent transaction</h5>
+                            </div>
+                            <div class="ml-auto">
+                                <a href="/account/T_history" class="btn btn-info" role="button">View More</a>
+                                <!-- <div class="dl">
+                                    <select class="custom-select">
+                                        <option value="0" selected="">Monthly</option>
+                                        <option value="1">Daily</option>
+                                        <option value="2">Weekly</option>
+                                        <option value="3">Yearly</option>
+                                    </select>
+                                </div> -->
+                            </div>
+                        </div>
+                        <!-- title -->
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table v-middle">
+                            <thead>
+                                <tr class="bg-light">
+                                    <th class="border-top-0">Sr.No</th>
+                                    <th class="border-top-0">Name</th>
+                                    <th class="border-top-0">Account No</th>
+                                    <th class="border-top-0">Date</th>
+                                    <th class="border-top-0">Amount</th>
+                                    <th class="border-top-0">Status</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    </div>
+<script src="//code.tidio.co/vy08pt6iyfkcehjyd1iekj4jlbqfwcw5.js" async></script>
+
+
+
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="row text-muted">
+            <div class="col-6 text-left">
+                <p class="mb-0">
+                    <a href="/index" class="text-muted"><strong> Liberty Pride Finance
+                        </strong></a> &copy
+                </p>
+            </div>
+            <div class="col-6 text-right">
+                <ul class="list-inline">
+                    <!-- <li class="footer-item">
+                        <a class="text-muted" href="#">Support</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="text-muted" href="#">Help Center</a>
+                    </li> -->
+                    <li class="footer-item">
+                        <a class="text-muted" href="/privacypolicy.html">Privacy</a>
+                    </li>
+                    <li class="footer-item">
+                        <a class="text-muted" href="/terms.html">Terms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div>
+</div>
+<!-- /#page-content-wrapper -->
+
+</div>
+
+<!-- javascript -->
+    <!-- Wraper Ends Here -->
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    <script src="/js/profileInfo.js"></script>
+    <script src="/js/dashboard.js"></script>
+
+
+    <script>
+        $('#bar').click(function() {
+            $(this).toggleClass('open');
+            $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
+
+        });
+    </script>
+
+    <script>
+        var ctx = document.getElementById('Credit').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                        label: '# Credited',
+                        data: [],
+
+                        // We Have to compare array two array i.e Debit data and data for expected result
+                        backgroundColor: [
+                            'rgba(0, 179, 3, 0.2)',
+
+                        ],
+                        borderColor: 'rgb(0, 179, 3)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: '# Debited',
+                        data: [],
+                        backgroundColor: [
+                            'rgba(245, 7, 31, 0.2)',
+
+                        ],
+                        borderColor: 'rgb(245, 7, 31)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+
+            options: {
+
+                // responsive: false,
+                
+            }
+        });
+
+
+        var ctx = document.getElementById('Balance').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Credit', 'Debit'],
+                datasets: [{
+                        label: 'Cash Flow Chart',
+                        data: [0, 0],
+                        backgroundColor: [
+                            'rgba(0, 179, 3, 0.6)',
+                            'rgba(245, 7, 31, 0.6)',
+
+                        ],
+                        borderColor: [
+                            'rgba(0, 179, 3)',
+                            'rgba(245, 7, 31)',
+                        ],
+
+                        borderWidth: 2,
+                        barThickness: 70
+                    }
+
+                ]
+            },
+
+            options: {
+
+                // responsive: false,
+            }
+        });
+
+
+        // Send Bar Chart
+    </script>
+
+
+
+
+
+</body>
+
+</html>

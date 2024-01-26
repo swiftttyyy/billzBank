@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account Sky Bank</title>
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon-32x32.png" rel="icon">
+    <link href="../assets/img/apple-icon-180x180.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <!-- Project CSS -->
+    <link rel="stylesheet" href="/assets/css/createAccount.css">
+
+
+    <!-- Javascrip -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/assets/js/createAc.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+    <form id="regForm" action="/signup" method="POST" >
+        <h1 class="mb-3">Register:</h1>
+
+        <!-- Tab 1 -->
+
+        <div class="tab mb-3">
+            <h3 class="mb-3 stepHead">Step 1/4</h3>
+            <p class="SubAction">Personal Detail:</p>
+            <div class="row g-2 mb-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" name="firstname" class="form-control" id="FirstName" placeholder="First Name">
+                        <label for="floatingInputGrid">First Name</label>
+
+                        <span id="FnameError" style="color: red;"></span>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="text" name="lastname" class="form-control" id="Lname" placeholder="Last Name">
+                            <label for="floatingInputGrid">Last Name</label>
+
+                            <span id="LnameError" style="color: red;"></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 mb-3">
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+
+                            <input type="text" name="fathername" class="form-control" id="FAname" placeholder="Father's Name">
+                            <label for="floatingInputGrid">Father's Full Name</label>
+                            <span id="FAnameError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+
+                            <input type="text" name=mothername class="form-control" id="MAname" placeholder="Mother's Name">
+                            <label for="floatingInputGrid">Mother's Full Name</label>
+                            <span id="MAnameError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 mb-3">
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="date" name="BirthDate" class="form-control" id="BirthDate" placeholder="Birth Date">
+                            <label for="floatingInputGrid">Birth Date</label>
+                            <span id="AgeError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input name="phoneNo" class="form-control" type="tel" id="MobileNo" pattern="[0-9]{10}" placeholder="Mobile Number" onkeypress="return isNumber(event)">
+                            <label for="floatingInputGrid">Mobile Number</label>
+                            <span id="MobileNoError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 mb-3">
+                <!-- <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="text" name="PanNumber" class="form-control" id="PanNo" placeholder="Pan Number | Verification Number">
+                            <label for="floatingInputGrid">Pan Number | Verification Number </label>
+                            <span id="PanError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input name="ssn" class="form-control" type="tel" id="AdharNo" pattern="[0-9]{12}" placeholder="Adhar Number | Routing Number" onkeypress="return isNumber(event)">
+                            <label for="floatingInputGrid">SSN</label>
+                            <span id="AdharError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 mb-3">
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email Address">
+                            <label for="floatingInputGrid">Email Address</label>
+                            <span id="EmailError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input name="pincode" class="form-control" type="tel" id="pincode" pattern="[0-9]{6}" placeholder="Pin Code" onkeypress="return isNumber(event)">
+                            <label for="floatingInputGrid">Pin Code</label>
+                            <span id="PincodeError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 2 -->
+
+        <div class="tab mb-3" id="KycTab">
+            <h3 class="mb-3 stepHead">Step 2/4</h3>
+            <p class="SubAction">Upload KYC Document</p>
+
+            <div class="form-group mb-3">
+                <label for="exampleFormControlFile1">UploadID front</label>
+                <input type="file" name="PanCardUp" class="form-control-file" id="PANCardUp" size="30" accept="image/jpg,image/png,image/jpeg,image/gif">
+                <span id="PanUPError" style="color: red;"></span>
+            </div>
+            <div class="form-groupmb-3">
+                <label for="exampleFormControlFile1">Upload ID back</label>
+                <input type="file" name="AdharCardUp" class="form-control-file" id="AdharCardUp" size="30" accept="image/jpg,image/png,image/jpeg,image/gif">
+                <span id="AdharUpError" style="color: red;"></span>
+            </div>
+            <span id="mailsendError"></span>
+        </div>
+
+        <!-- Tab 3 -->
+
+        <div class="tab">
+            <h3 class="mb-3 stepHead">Step 3/4</h3>
+            <p class="SubAction">Validate Email Account</p>
+
+            <div class="col-md mb-3">
+                <div class="col-md">
+                    <div class="alert alert-success" role="alert">
+                        Plaese Insert your pin code here to continue
+                    </div>
+                    <div class="form-floating OtpMobile">
+                        <input type="tel" class="form-control" name="Otp" id="Otp" placeholder="Enter 6 Digit OTP" pattern="[0-9]{6}">
+                        <label for="floatingInputGrid">Enter 6 Digit Pin Code</label>
+                        <span style="color: red;" id="OtpError"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tab 4 -->
+
+        <div class="tab">
+            <h3 class="mb-3 stepHead">Step 4/4</h3>
+            <p class="SubAction">Create Username and Password</p>
+
+            <div class="col-md mb-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="username" id="Username" placeholder="Create Username">
+                        <label for="floatingInputGrid">Create Username</label>
+
+                        <span style="color: red;" id="UsernameError" name="UsernameError"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md mb-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input class="form-control" type="password" name="password" id="Password" placeholder="Enter Password" data-toggle="tooltip" data-placement="top" title="Enter Password with atleast 8 charater long with 1 Capital 1 small 1 number and 1 special charater">
+                        <label for="floatingInputGrid">Enter Password</label>
+
+                        <span style="color: red;" id="PasswordError" name="PasswordError"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md mb-3">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <input class="form-control" type="password" name="ConfirmPass" id="ConfirmPass" placeholder="Confirm Password">
+                        <label for="floatingInputGrid">Confirm Password</label>
+
+                        <span style="color: red;" id="ConfirmPassError" name="ConfirmPassError"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div style="overflow:auto;">
+            <div style="float:right;">
+                <button type="button" id="prevBtn" class="CustomButton" onclick="nextPrev(-1)">Previous</button>
+                <button type="button" id="nextBtn" class="CustomButton" onclick="nextPrev(1)">Next</button>
+                <input type="submit" name="submit" id="submitBtn" class="CustomButton" style="display: none;">
+            </div>
+        </div>
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+
+
+    <script src="../assets/js/createAccount.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+
+
+
+
+</body>
+
+</html>
