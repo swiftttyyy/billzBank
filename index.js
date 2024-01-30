@@ -234,7 +234,7 @@ app.post("/logout", (req,res)=>{
   })
 
 
-app.listen(4000, ()=>{
+app.listen(6000, ()=>{
     console.log("Listening")
 })
 
