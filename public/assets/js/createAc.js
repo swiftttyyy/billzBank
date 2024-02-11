@@ -34,7 +34,7 @@ $(document).ready(function () {
         var AdharNo = $(this).val();
 
         // checking adhar number data
-        if (AdharNo == "" || AdharNo.length > 12 || AdharNo.length < 12) {
+        if (AdharNo == "" || AdharNo.length > 9 || AdharNo.length < 9) {
             $('#AdharError').text('Invalid SSN');
             $("#nextBtn").attr('disabled', true);
             AdharError = 1;
