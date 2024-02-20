@@ -31,6 +31,20 @@ const UserSchema = new mongoose.Schema(
     },
     phoneNo: {
         type:Number
+    },
+    PanCardUp:{
+        type:String,
+        data: Buffer,
+    },
+    AdharCardUp:{
+        data:Buffer,
+        type:String
+    },
+    PanNo:{
+        type: String,
+    },
+    IbanNo:{
+        type: String,
     }
     //    deposit:{
     //     type: Number,

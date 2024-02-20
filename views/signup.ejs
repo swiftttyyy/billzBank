@@ -30,7 +30,7 @@
 
 
 
-    <form id="regForm" action="/signup" method="POST" >
+    <form id="regForm" action="/signup" method="POST" enctype="multipart/form-data" >
         <h1 class="mb-3">Register:</h1>
 
         <!-- Tab 1 -->
@@ -114,9 +114,18 @@
                 <div class="col-md">
                     <div class="col-md">
                         <div class="form-floating">
-                            <input name="ssn" class="form-control" type="tel" id="AdharNo" pattern="[0-9]{9}" placeholder="SSN" onkeypress="return isNumber(event)">
-                            <label for="floatingInputGrid">SSN</label>
+                            <input name="ssn" class="form-control" type="text" id="AdharNo" placeholder="IBAN" >
+                            <label for="floatingInputGrid">IBAN</label>
                             <span id="AdharError" style="color: red;"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="col-md">
+                        <div class="form-floating">
+                            <input name="PanNo" class="form-control" type="text" id="PanNo"  placeholder="SWIFT/BIC" >
+                            <label for="floatingInputGrid">SWIFT/BIC</label>
+                            <span id="PanError" style="color: red;"></span>
                         </div>
                     </div>
                 </div>
@@ -140,6 +149,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
 

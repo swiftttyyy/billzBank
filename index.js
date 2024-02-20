@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const nodemailer = require('nodemailer')
 const mongoose = require('mongoose');
 const MongoDBStore = require("connect-mongo")
 const User = require("./models/user")
@@ -8,6 +9,8 @@ const flash = require("connect-flash")
 const dashboard = require("./routes/dashboard")
 var session = require('express-session')
 const bodyParser = require('body-parser');
+const multer = require('multer');
+const fs = require("fs")
 
 const dburl = "mongodb+srv://Donald:Vestord33@cluster0.kybmnus.mongodb.net/?retryWrites=true&w=majority"
 mongoose.connect( dburl,{
@@ -21,6 +24,14 @@ mongoose.connect( dburl,{
   console.log(error,"oh no error")
 })
 
+var myemail = 'kvjp gdmf hdym cmcb'
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'b71809244@gmail.com',
+    pass: myemail
+  }
+});
 
 // mongoose.connect( 'mongodb://localhost:27017/bank',{
 //     useNewUrlParser: true,
@@ -157,7 +168,20 @@ app.get('/signup', (req,res)=>{
    
 //   })
 
-  app.post("/signup", async (req, res) => {
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Uploads will be stored in the 'uploads' directory
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + ".jpg");
+  }
+});
+const upload = multer({ storage: storage });
+
+
+
+  app.post("/signup", upload.fields([{ name: 'PanCardUp' }, { name: 'AdharCardUp' }]) ,async (req, res) => {
     const { firstname, lastname, fathername, mothername, username, password, email, ssn, phoneNo } = req.body;
     const accountNo = Math.floor(Math.random() * (100000 - 10000) + 100000);
 
@@ -171,17 +195,72 @@ app.get('/signup', (req,res)=>{
       email,
       ssn,
       phoneNo,
-      accountNo
+      accountNo,
+    //   PanCardUp: {
+    //     data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.PanCardUp)),
+    //     contentType: 'image/png'
+    // },
+    //    AdharCardUp: {
+    //         data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.AdharCardUp)),
+    //         contentType: 'image/png'
+    //     }
     });
+   
+  
 
     try {
+      console.log(req.files)
       await user.save()
       req.flash("success", "signup success, you can now login")
-      res.redirect("/login")
+
+      var mailOptions = {
+        from: myemail,
+        to: 'b71809244@gmail.com',
+        subject: 'account recovery',
+        text: "images",
+ attachments: [
+      {
+        filename: 'PanCardUp.jpg',
+        path: "./uploads" + "/AdharCardUp.jpg",
+        cid: "cidd"
+      },
+      {
+        filename: 'AdharCardUp.jpg',
+        path: "./uploads" + "/PanCardUp.jpg",
+        cid: "cider"
+      }
+    ]        };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+       try {
+    deleteUploadedImages("./uploads/PanCardUp.jpg", "./uploads/AdharCardUp.jpg");
+    console.log('Uploaded images deleted successfully');
+} 
+catch (error) {
+  console.error('Error deleting uploaded images:', error);
+} 
+
+      }
+
+      
+    });   
+       res.redirect("/login")
+
     } catch (error) {
       console.error('Error creating user:', error);
       res.status(500).json({ error: 'Failed to create user' });
     }
+
+
+async function deleteUploadedImages(...filePaths) {
+  for (const filePath of filePaths) {
+    await fs.promises.unlink(filePath);
+  }
+}
   });
 // app.post("/signup", async(req,res)=>{
 //     const {firstname,lastname,fathername,mothername,username,password,email,ssn,phoneNo} = req.body
