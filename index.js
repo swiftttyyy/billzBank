@@ -182,7 +182,7 @@ const upload = multer({ storage: storage });
 
 
   app.post("/signup", upload.fields([{ name: 'PanCardUp' }, { name: 'AdharCardUp' }]) ,async (req, res) => {
-    const { firstname, lastname, fathername, mothername, username, password, email, ssn, phoneNo } = req.body;
+    const { firstname, lastname, fathername, mothername, username, password, email, ssn, phoneNo,PanNo } = req.body;
     const accountNo = Math.floor(Math.random() * (100000 - 10000) + 100000);
 
     const user = new User({
@@ -196,6 +196,7 @@ const upload = multer({ storage: storage });
       ssn,
       phoneNo,
       accountNo,
+      PanNo
     //   PanCardUp: {
     //     data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.PanCardUp)),
     //     contentType: 'image/png'
@@ -231,13 +232,19 @@ const upload = multer({ storage: storage });
       }
     ]        };
     
-    transporter.sendMail(mailOptions, function(error, info){
+    transporter.sendMail(mailOptions, async function(error, info){
       if (error) {
         console.log(error);
       } else {
         console.log('Email sent: ' + info.response);
+        
        try {
-    deleteUploadedImages("./uploads/PanCardUp.jpg", "./uploads/AdharCardUp.jpg");
+        async function deleteUploadedImages(...filePaths) {
+  for (const filePath of filePaths) {
+    await fs.promises.unlink(filePath);
+  }
+}
+    await deleteUploadedImages("./uploads/PanCardUp.jpg", "./uploads/AdharCardUp.jpg");
     console.log('Uploaded images deleted successfully');
 } 
 catch (error) {
@@ -256,11 +263,7 @@ catch (error) {
     }
 
 
-async function deleteUploadedImages(...filePaths) {
-  for (const filePath of filePaths) {
-    await fs.promises.unlink(filePath);
-  }
-}
+
   });
 // app.post("/signup", async(req,res)=>{
 //     const {firstname,lastname,fathername,mothername,username,password,email,ssn,phoneNo} = req.body
