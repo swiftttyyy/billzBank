@@ -315,7 +315,7 @@ app.post("/logout", (req,res)=>{
   })
 
 
-app.listen(5000, ()=>{
+app.listen(5006, ()=>{
     console.log("Listening on port 5000")
 })
 
