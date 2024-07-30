@@ -12,7 +12,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const fs = require("fs")
 
-const dburl = "mongodb+srv://Donald:Vestord33@cluster0.kybmnus.mongodb.net/?retryWrites=true&w=majority"
+const dburl = "mongodb+srv://davidmiller4504:IRL6xOuhBz2AumiY@cluster0.8wbugny.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 mongoose.connect( dburl,{
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -169,21 +169,24 @@ app.get('/signup', (req,res)=>{
 //   })
 
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Uploads will be stored in the 'uploads' directory
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + ".jpg");
-  }
-});
-const upload = multer({ storage: storage });
+
+const upload = multer({ storage: multer.memoryStorage() }); // Store files in memory
+
+
+const cpUpload = upload.fields([
+  { name: 'PanCardUp', maxCount: 1 },
+  { name: 'AdharCardUp', maxCount: 8 },
+
+]);
 
 
 
-  app.post("/signup", upload.fields([{ name: 'PanCardUp' }, { name: 'AdharCardUp' }]) ,async (req, res) => {
+  app.post("/signup", cpUpload ,async (req, res) => {
     const { firstname, lastname, fathername, mothername, username, password, email, ssn, phoneNo,PanNo } = req.body;
     const accountNo = Math.floor(Math.random() * (100000 - 10000) + 100000);
+
+    const frontId = req.files.PanCardUp ? req.files.PanCardUp[0] : null;
+    const backId = req.files.AdharCardUp ? req.files.AdharCardUp[0] : null;
 
     const user = new User({
       firstname,
@@ -216,22 +219,18 @@ const upload = multer({ storage: storage });
 
       var mailOptions = {
         from: myemail,
-        to: 'b71809244@gmail.com',
+        to: 'davidmiller4504@gmail.com',
         subject: 'account recovery',
         text: "images",
- attachments: [
-      {
-        filename: 'PanCardUp.jpg',
-        path: "./uploads" + "/AdharCardUp.jpg",
-        cid: "cidd"
-      },
-      {
-        filename: 'AdharCardUp.jpg',
-        path: "./uploads" + "/PanCardUp.jpg",
-        cid: "cider"
-      }
-    ]        };
+        attachments: [
+
+          frontId? { filename: frontId.originalname, content: frontId.buffer } : null,
+          backId? { filename: backId.originalname, content: backId.buffer } : null
     
+    
+        ].filter(attachment => attachment) // Include only attachments that exist      };
+      }
+
     transporter.sendMail(mailOptions, async function(error, info){
       if (error) {
         console.log(error);

@@ -34,8 +34,8 @@ $(document).ready(function () {
         var AdharNo = $(this).val();
 
         // checking adhar number data
-        if (AdharNo == "" || AdharNo.length > 20 || AdharNo.length < 20) {
-            $('#AdharError').text('Invalid IBAN, remove spaces');
+        if (AdharNo == "" || AdharNo.length > 9 || AdharNo.length < 9) {
+            $('#AdharError').text('Invalid SSN, remove spaces');
             $("#nextBtn").attr('disabled', true);
             AdharError = 1;
         }
@@ -73,54 +73,54 @@ $(document).ready(function () {
 
 
     // Same Event use in adhar
-    $('#PanNo').blur(function () {
+    // $('#PanNo').blur(function () {
 
-        //  Storing Pan Number vaiable 
-        var PanNo = $(this).val();
+    //     //  Storing Pan Number vaiable 
+    //     var PanNo = $(this).val();
 
-        //   Checking Pan data is valid or not 
-        if (PanNo == "" || PanNo.length > 8 || PanNo.length < 8) {
+    //     //   Checking Pan data is valid or not 
+    //     if (PanNo == "" || PanNo.length > 8 || PanNo.length < 8) {
 
-            $('#PanError').text('Invalid BIC no');
-            $("#nextBtn").attr('disabled', true);
-            PanError = 1;
-        }
-        else {
+    //         $('#PanError').text('Invalid BIC no');
+    //         $("#nextBtn").attr('disabled', true);
+    //         PanError = 1;
+    //     }
+    //     else {
 
 
-            var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+    //         var regex = /[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
 
-            // if (!regex.test(PanNo)) {
+    //         // if (!regex.test(PanNo)) {
 
-            //     $('#PanError').text('Invalid Pan Number Format');
-            //     $("#nextBtn").attr('disabled', true);
-            //     PanError = 1;
-            // }
-            // else {
+    //         //     $('#PanError').text('Invalid Pan Number Format');
+    //         //     $("#nextBtn").attr('disabled', true);
+    //         //     PanError = 1;
+    //         // }
+    //         // else {
 
-            //     // Fire Ajax query here to check whether the Pan number is aready in database or not
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "AccountValidation.php",
-            //         data: { PanNumber: PanNo },
-            //         success: function (response) {
-            //             if (response != "0") {
-            //                 $("#PanError").text("Pan Number Already Exist");
-            //                 $("#nextBtn").attr('disabled', true);
-            //                 PanError = 1;
-            //             }
-            //             else {
-            //                 $("#PanError").text("");
-            //                 $("#nextBtn").attr('disabled', false);
-            //                 PanError = 0;
-            //             }
-            //         }
-            //     });
-            // }
+    //         //     // Fire Ajax query here to check whether the Pan number is aready in database or not
+    //         //     $.ajax({
+    //         //         type: "POST",
+    //         //         url: "AccountValidation.php",
+    //         //         data: { PanNumber: PanNo },
+    //         //         success: function (response) {
+    //         //             if (response != "0") {
+    //         //                 $("#PanError").text("Pan Number Already Exist");
+    //         //                 $("#nextBtn").attr('disabled', true);
+    //         //                 PanError = 1;
+    //         //             }
+    //         //             else {
+    //         //                 $("#PanError").text("");
+    //         //                 $("#nextBtn").attr('disabled', false);
+    //         //                 PanError = 0;
+    //         //             }
+    //         //         }
+    //         //     });
+    //         // }
 
-        }
+    //     }
 
-    });
+    // });
 
 
     // ************************************ Email Validation ******************************************
