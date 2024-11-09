@@ -15,7 +15,11 @@ html {
     height: 100%;
 }
 
-
+.this-month{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
 
 

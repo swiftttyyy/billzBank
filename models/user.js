@@ -52,11 +52,27 @@ const UserSchema = new mongoose.Schema(
        },
        balance: {
         type: String,
-        default: "0",
+        default: "0.00",
        },
-       thisMonth: {
+       creditedThisMonth: {
         type:String,
-        default: "0"
+        default: "0.00"
+       },
+       debitedThisMonth: {
+        type: String,
+        default: "0.00"
+       },
+       savings: {
+        type:String,
+        default: "0.00"
+       },
+       credit: {
+        type:String,
+        default: "0.00"
+       },
+       debit: {
+        type:String,
+        default: "0.00"
        }
     //    lastdeposit:{
     //      type: Number,
