@@ -556,6 +556,12 @@ footer.footer ul {
     cursor: pointer;
     
 }
+.menuHover button{
+    background-color: white;
+    border: none;
+    padding: 1rem !important;
+    border-radius: .5rem;
+}
 .ico{
     color: white !important;
 }

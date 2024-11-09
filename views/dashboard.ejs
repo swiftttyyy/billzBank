@@ -136,7 +136,9 @@
                 <li class="menuHover">
                     <form action="/logout" method="post">
                     <button class="nav-link text-left" role="button">
-                        <i class="flaticon-map"></i><i class="bx bx-log-out ico"></i> Logout
+                        <i class="flaticon-map"></i>
+                        <!-- <i class="bx bx-log-out ico"></i>  -->
+                        Logout
                     </button>
                 </form>
                 </li>
@@ -304,7 +306,7 @@
                     <div class="col-sm-3">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title mb-4">Balance $</h5>
+                                <h5 class="card-title mb-4">Balance: $<%= useraccount.balance%></h5>
                                 <h1 id="BalanceDisplay" class="display-5 mt-1 mb-3"></h1>
                                 <div class="mb-1">
                                     <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i></span>
@@ -330,7 +332,7 @@
                     <div class="col-sm-3">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title mb-4 ">Credited this Month $</h5>
+                                <h5 class="card-title mb-4 ">Credited this Month :$<%= useraccount.thisMonth%></h5>
                                 <h1 id="CreditDisplay" class="display-5 mt-1 mb-3 text-success"></h1>
                                 <div class="mb-1">
                                     <span id="CreditLastM" class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i></span>

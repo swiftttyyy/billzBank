@@ -45,11 +45,19 @@ const UserSchema = new mongoose.Schema(
     },
     IbanNo:{
         type: String,
-    }
-    //    deposit:{
-    //     type: Number,
-    //     default:  0
-    //    },
+    },
+       deposit:{
+        type: Number,
+        default:  0
+       },
+       balance: {
+        type: String,
+        default: "0",
+       },
+       thisMonth: {
+        type:String,
+        default: "0"
+       }
     //    lastdeposit:{
     //      type: Number,
     //      default: 0
