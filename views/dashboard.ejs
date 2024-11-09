@@ -8,17 +8,17 @@
     <title> PTBank </title>
 
     <!-- Favicons -->
-    <link href="/assets/img/favicon-32x32.png" rel="icon">
-    <link href="/assets/img/apple-icon-180x180.png" rel="apple-touch-icon">
+    <link href="assets/img/favicon-32x32.png" rel="icon">
+    <link href="assets/img/apple-icon-180x180.png" rel="apple-touch-icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.css">
-    <link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.min.css">
-    <link rel="stylesheet" href="/assets/vendor/boxicons/css/animations.css">
-    <link rel="stylesheet" href="/assets/vendor/boxicons/css/transformations.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/animations.css">
+    <link rel="stylesheet" href="assets/vendor/boxicons/css/transformations.css">
 
 
 
@@ -28,7 +28,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <link rel="stylesheet" href="/assets/css/userDash.css">
+    <link rel="stylesheet" href="assets/css/UserDash.css">
     <style>
         @media only screen and (min-width:992px) {
             #credit {
@@ -259,7 +259,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= useraccount.firstname  %></span>
                                 <img id="HeaderProfile" hidden class="img-profile rounded-circle">
-                                <span id="HeaderProfileTag" class="btn btn-circle text-white" style="font-size: 13px; background-color: #29391b;"><%= useraccount.firstname.charAt(0) %></span>
+                                <span id="HeaderProfileTag" class="btn btn-circle text-white" style="font-size: 13px; background-color: #29391b;">C</span>
                             </a>
 
 
@@ -296,7 +296,10 @@
             <div class="col-md-12 mt-lg-4 mt-4">
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800"><font color="darkorange">Dashboard</font></h1>
+                    <h1 class="h3 mb-0 text-gray-800"><font color="black">
+                        <small>Welcome,</small>
+                        <%= useraccount.firstname  %>
+                    </font></h1>
                     <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i>
                         Generate Report</a> -->
                 </div>
