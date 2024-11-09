@@ -23,7 +23,6 @@ router.use(async (req, res, next) => {
 });
 
 router.get("/", async(req,res)=>{
-  
     let name = res.app.get("name") 
     const user = await User.findOne({username:name}) 
     res.render("dashboard",{useraccount : user})
@@ -51,8 +50,10 @@ router.get("/", async(req,res)=>{
 //     });
 //   });
 
-router.get("/Transfer",(req,res)=>{
-    res.render("transfer")
+router.get("/Transfer", async (req,res)=>{
+    let name = res.app.get("name") 
+    const user = await User.findOne({username:name})
+    res.render("transfer",{useraccount : user})
 })
 router.get("/domestic", (req,res)=>{
     res.render("domestic")
@@ -94,11 +95,15 @@ router.get("/profile", async(req,res)=>{
 //     });
 //   });
 
-router.get("/cards", (req,res)=>{
-    res.render("cards")
+router.get("/cards", async (req,res)=>{
+    let name = res.app.get("name") 
+    const user = await User.findOne({username:name})
+    res.render("cards", {useraccount : user})
 })
-router.get("/T_history", (req,res)=>{
-    res.render("history")
+router.get("/T_history",async (req,res)=>{
+    let name = res.app.get("name") 
+    const user = await User.findOne({username:name})
+    res.render("history",{useraccount : user})
 })
 router.get("/secureAccount", (req,res)=>{
     res.render("secureaccount")
