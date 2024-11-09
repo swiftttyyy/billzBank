@@ -65,6 +65,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.raw());
 app.use(bodyParser.text());
 app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, '/public')));
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "/views",))
 app.use("/account", dashboard)
